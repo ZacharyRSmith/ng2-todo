@@ -2,7 +2,11 @@
 
 <ul class="todos">
   <li *ngFor="let todo of todos; let idx = index" (dblclick)="deleteTodo(idx)">
-    {{todo}}
+    {{todo.title}}
+    <div>
+      <span>Edit: </span>
+      <input [(ngModel)]="todo.title" />
+    </div>
   </li>
 </ul>
 

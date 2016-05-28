@@ -1,1 +1,6 @@
-export var TODOS: string[] = ['a', 'b', 'c'];
+import Todo from '../models/todo';
+
+export var TODOS: Todo[] = [
+  { 'title': 'a' },
+  { 'title': 'b' },
+  { 'title': 'c' }];

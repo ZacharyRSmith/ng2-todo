@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteParams } from '@angular/router-deprecated';
 
+import Todo from '../models/todo';
 import { TodoService } from '../services/todo.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { TodoService } from '../services/todo.service';
   templateUrl: 'todo-detail.component.html'
 })
 export default class TodoDetailComponent {
-  todo: String;
+  todo: Todo;
 
   constructor(
     private todoService:TodoService,

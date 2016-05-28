@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS }
   from '@angular/router-deprecated';
 
+import Todo from '../models/todo';
 import { TodoService } from '../services/todo.service';
 import TodoDetailComponent from './todo-detail.component';
 
@@ -24,7 +25,7 @@ import TodoDetailComponent from './todo-detail.component';
 export class AppComponent implements OnInit {
   newTodo: String;
   title: String;
-  todos: String[];
+  todos: Todo[];
 
   constructor(private todoService:TodoService) {
     this.title = 'Todos';
@@ -35,8 +36,10 @@ export class AppComponent implements OnInit {
       .then((todos:string[]) => this.todos = todos);
   }
 
-  createTodo(newTodo:String) {
-    this.todos.push(newTodo);
+  createTodo(title:string) {
+    let todo = new Todo();
+    todo.title = title;
+    this.todos.push(todo);
   }
 
   deleteTodo(idx:number) {
