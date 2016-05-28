@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
 
 <ul class="todos">
-  <li *ngFor="let todo of todos; #idx = index" (dblclick)="deleteTodo(idx)">
+  <li *ngFor="let todo of todos; let idx = index" (dblclick)="deleteTodo(idx)">
     {{todo}}
   </li>
 </ul>
