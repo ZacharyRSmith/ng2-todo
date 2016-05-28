@@ -33,16 +33,18 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.todoService.getTodos()
-      .then((todos:string[]) => this.todos = todos);
+      .then((todos:Todo[]) => this.todos = todos);
   }
 
   createTodo(title:string) {
-    let todo = new Todo();
-    todo.title = title;
-    this.todos.push(todo);
+    this.todoService.create(title);
   }
 
   deleteTodo(idx:number) {
     this.todos.splice(idx, 1);
+  }
+
+  inspect(ary:Array<Todo>) {
+    return JSON.stringify(ary);
   }
 }
