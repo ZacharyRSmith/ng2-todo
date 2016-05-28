@@ -1,0 +1,15 @@
+<ul class="todos">
+  <li *ngFor="let todo of todos; let idx = index">
+    <a (click)="onTodoClick(todo)">{{todo.title}}</a>
+    <div>
+      <span>Edit: </span>
+      <input [(ngModel)]="todo.title" />
+    </div>
+    <div>
+      <button (click)="deleteTodo(idx)">Delete</button>
+    </div>
+  </li>
+</ul>
+
+<input [(ngModel)]="newTodo" placeholder="New task..." />
+<button (click)="createTodo(newTodo)">Create</button>

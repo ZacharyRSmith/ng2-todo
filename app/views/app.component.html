@@ -1,16 +1,3 @@
-<!-- <div>{{inspect(todos)}}</div> -->
-
 <h1>{{title}}</h1>
 
-<ul class="todos">
-  <li *ngFor="let todo of todos; let idx = index" (dblclick)="deleteTodo(idx)">
-    {{todo.title}}
-    <div>
-      <span>Edit: </span>
-      <input [(ngModel)]="todo.title" />
-    </div>
-  </li>
-</ul>
-
-<input [(ngModel)]="newTodo" placeholder="New task..." />
-<button (click)="createTodo(newTodo)">Create</button>
+<router-outlet></router-outlet>
