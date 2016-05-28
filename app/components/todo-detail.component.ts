@@ -21,4 +21,8 @@ export default class TodoDetailComponent implements OnInit {
     this.todoService.getTodo(title)
       .then(todo => this.todo = todo);
   }
+
+  goBack() {
+    window.history.back();
+  }
 }

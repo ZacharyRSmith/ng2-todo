@@ -1,7 +1,21 @@
 <div *ngIf="todo">
   <h1>Title: {{todo.title}}</h1>
 
+  <div>
+    <span>Edit: </span>
+    <input [(ngModel)]="todo.title" />
+  </div>
+
   <p>Description: {{todo.description}}</p>
+
+  <div>
+    <span>Edit: </span>
+    <input [(ngModel)]="todo.description" />
+  </div>
+
+  <button (click)="goBack()">
+    Back
+  </button>
 </div>
 
 <div *ngIf="!todo">
