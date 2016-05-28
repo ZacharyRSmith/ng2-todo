@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<ul class="todos">
+  <li *ngFor="let todo of todos">
+    {{todo}}
+  </li>
+</ul>
+
+<input [(ngModel)]="newTodo" placeholder="New task..." />
+<button (click)="createTodo(newTodo)">Create</button>

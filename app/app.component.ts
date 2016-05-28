@@ -3,22 +3,20 @@ import { Component } from '@angular/core';
 //   from '@angular/router-deprecated';
 
 @Component({
-    selector: 'my-app',
-    template: `
-      <h1>{{title}}</h1>
-      <ul class="todos">
-        <li *ngFor="let todo of todos">
-          {{todo}}
-        </li>
-      </ul>
-    `
+  selector: 'my-app',
+  templateUrl: 'app/views/app.component.html'
 })
 export class AppComponent {
+  newTodo: String;
   title: String;
   todos: String[];
 
   constructor() {
     this.title = 'Todos';
     this.todos = ['a', 'b'];
+  }
+
+  createTodo(newTodo:String) {
+    this.todos.push(newTodo);
   }
 }
