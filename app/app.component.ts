@@ -19,4 +19,8 @@ export class AppComponent {
   createTodo(newTodo:String) {
     this.todos.push(newTodo);
   }
+
+  deleteTodo(idx:number) {
+    this.todos.splice(idx, 1);
+  }
 }
